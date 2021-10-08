@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>关于ESXI7.0版本，小容量硬盘占用问题</title>
+    <url>/2021/10/08/esxi%207.0%20%E7%A1%AC%E7%9B%98%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<p>在esxi 7.0里ESX-OSData分区默认会占用120G的硬盘容量，所以小容量硬盘安装会出现安装完系统后没有Datastore空间可用。</p>
+<h6 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h6><p>通过autoPartitionOSDataSize这个启动参数用来调整esxi的系统分区大小。<br><em><strong>在第一次引导启动界面</strong></em>，按下Shift+O，加上autoPartitionOSDataSize=8192，然后回车。8192这个值是代表系统分区大小设置为8G，也可以根据实际需求来设置。<span id="more"></span></p>
+<img src="/01.png" class="[class names]" title="[width] [height] " alt="引导界面">
+<img src="/02.png" class="[class names]" title="[width] [height] " alt="启动参数">
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">autoPartitionOSDataSize=8192</span><br></pre></td></tr></table></figure>
+<p>完成安装之后检查硬盘占用，OSDATA Volume仅占用8G左右。</p>
+<img src="/03.png" class="[class names]" title="[width] [height] " alt="硬盘分区显示">
+<p>到这里，问题解决。</p>
+<h6 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h6><p>esxi 7.0的系统分区OSData默认会占用120G左右硬盘空间，而当硬盘是SSD时，还会将此空间作为虚拟闪存，所以解决方案就是在安装时调整系统的OSData分区大小。</p>
+<hr>
+<blockquote><p>本文主要参考了以下文章相关内容</p>
+<footer><strong>yqowen</strong><cite><a href="https://www.jianshu.com/p/eb5712db1624">如何不让ESXi7.0的虚拟闪存占掉你的小硬盘</a></cite></footer></blockquote>]]></content>
+      <categories>
+        <category>服务器</category>
+        <category>虚拟机</category>
+      </categories>
+      <tags>
+        <tag>esxi</tag>
+      </tags>
+  </entry>
+</search>

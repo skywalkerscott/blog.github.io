@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-<html lang="zh">
+<html lang="zh-CN">
   
 
     <head>
@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>Hello World |  禅</title>
+      <title>关于ESXI7.0版本，小容量硬盘占用问题 |  禅</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -52,7 +52,8 @@ var _hmt = _hmt || [];
           font-size: 1.6rem;
         }
       </style>
-    </head>
+    <link rel="alternate" href="/atom.xml" title="禅" type="application/atom+xml">
+</head>
   </html>
 </html>
 
@@ -64,7 +65,7 @@ var _hmt = _hmt || [];
     <main class="content on">
       <section class="outer">
   <article
-  id="post-hello-world"
+  id="post-esxi 7.0 硬盘设置"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -75,7 +76,7 @@ var _hmt = _hmt || [];
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Hello World
+  关于ESXI7.0版本，小容量硬盘占用问题
 </h1>
  
 
@@ -83,15 +84,19 @@ var _hmt = _hmt || [];
     </header>
      
     <div class="article-meta">
-      <a href="/2021/10/02/hello-world/" class="article-date">
-  <time datetime="2021-10-02T02:41:44.990Z" itemprop="datePublished">2021-10-02</time>
-</a>   
+      <a href="/2021/10/08/esxi%207.0%20%E7%A1%AC%E7%9B%98%E8%AE%BE%E7%BD%AE/" class="article-date">
+  <time datetime="2021-10-08T07:05:41.000Z" itemprop="datePublished">2021-10-08</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a> / <a class="article-category-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E8%99%9A%E6%8B%9F%E6%9C%BA/">虚拟机</a>
+  </div>
+  
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
-            <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">75</span>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">240</span>
         </span>
     </span>
 
@@ -99,8 +104,8 @@ var _hmt = _hmt || [];
         &nbsp; | &nbsp;
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
-            <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">1 min</span>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">1 分钟</span>
         </span>
     </span>
 </div>
@@ -115,25 +120,23 @@ var _hmt = _hmt || [];
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
- 
+  <p>在esxi 7.0里ESX-OSData分区默认会占用120G的硬盘容量，所以小容量硬盘安装会出现安装完系统后没有Datastore空间可用。</p>
+<h6 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h6><p>通过autoPartitionOSDataSize这个启动参数用来调整esxi的系统分区大小。<br><em><strong>在第一次引导启动界面</strong></em>，按下Shift+O，加上autoPartitionOSDataSize=8192，然后回车。8192这个值是代表系统分区大小设置为8G，也可以根据实际需求来设置。<span id="more"></span></p>
+<img src="/01.png" class="[class names]" title="[width] [height] " alt="引导界面">
+<img src="/02.png" class="[class names]" title="[width] [height] " alt="启动参数">
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">autoPartitionOSDataSize=8192</span><br></pre></td></tr></table></figure>
+<p>完成安装之后检查硬盘占用，OSDATA Volume仅占用8G左右。</p>
+<img src="/03.png" class="[class names]" title="[width] [height] " alt="硬盘分区显示">
+<p>到这里，问题解决。</p>
+<h6 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h6><p>esxi 7.0的系统分区OSData默认会占用120G左右硬盘空间，而当硬盘是SSD时，还会将此空间作为虚拟闪存，所以解决方案就是在安装时调整系统的OSData分区大小。</p>
+<hr>
+<blockquote><p>本文主要参考了以下文章相关内容</p>
+<footer><strong>yqowen</strong><cite><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/eb5712db1624">如何不让ESXi7.0的虚拟闪存占掉你的小硬盘</a></cite></footer></blockquote> 
       <!-- reward -->
       
       <div id="reword-out">
         <div id="reward-btn">
-          Donate
+          打赏
         </div>
       </div>
       
@@ -146,9 +149,9 @@ var _hmt = _hmt || [];
       <ul class="post-copyright">
         <li>
           <i class="ri-copyright-line"></i>
-          <strong>Copyright： </strong>
+          <strong>版权声明： </strong>
           
-          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
           
         </li>
       </ul>
@@ -198,64 +201,18 @@ var _hmt = _hmt || [];
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://blog.jieyun.site/2021/10/02/hello-world/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://blog.jieyun.site/2021/10/08/esxi%207.0%20%E7%A1%AC%E7%9B%98%E8%AE%BE%E7%BD%AE/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/esxi/" rel="tag">esxi</a></li></ul>
+
     </footer>
   </div>
 
    
-   
-<!-- valine评论 -->
-<div id="vcomments-box">
-  <div id="vcomments"></div>
-</div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
-<script>
-  new Valine({
-    el: "#vcomments",
-    app_id: "",
-    app_key: "",
-    path: window.location.pathname,
-    avatar: "monsterid",
-    placeholder: "给我的文章加点评论吧~",
-    recordIP: true,
-  });
-  const infoEle = document.querySelector("#vcomments .info");
-  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
-    infoEle.childNodes.forEach(function (item) {
-      item.parentNode.removeChild(item);
-    });
-  }
-</script>
-<style>
-  #vcomments-box {
-    padding: 5px 30px;
-  }
-
-  @media screen and (max-width: 800px) {
-    #vcomments-box {
-      padding: 5px 0px;
-    }
-  }
-
-  #vcomments-box #vcomments {
-    background-color: #fff;
-  }
-
-  .v .vlist .vcard .vh {
-    padding-right: 20px;
-  }
-
-  .v .vlist .vcard {
-    padding-left: 10px;
-  }
-</style>
-
- 
+  
    
      
 </article>
@@ -280,9 +237,9 @@ var _hmt = _hmt || [];
         
         
         <span>
-  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
   <span class="division">|</span>
-  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
 </span>
         
       </li>
@@ -296,8 +253,6 @@ var _hmt = _hmt || [];
     <ul>
       <li>
         <!-- cnzz统计 -->
-        
-        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
         
       </li>
     </ul>
@@ -346,7 +301,7 @@ var _hmt = _hmt || [];
   <ul class="nav">
     <li class="nav-item">
       
-      <a class="nav-item-link nav-item-search"  title="Search">
+      <a class="nav-item-link nav-item-search"  title="搜索">
         <i class="ri-search-line"></i>
       </a>
       
