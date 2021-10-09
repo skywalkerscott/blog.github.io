@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>标签 |  禅</title>
+      <title> 禅</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -63,13 +63,166 @@ var _hmt = _hmt || [];
     
       
     <main class="content on">
-      <section class="outer">
-  
-    <h1 class="page-type-title">标签</h1>
-    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/esxi/" rel="tag">esxi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">解决方案</a></li></ul>
-  
+      
+<section class="cover">
+    
+  <div class="cover-frame">
+    <div class="bg-box">
+      <img src="/images/cover1.jpg" alt="image frame" />
+    </div>
+    <div class="cover-inner text-center text-white">
+      <h1><a href="/">禅</a></h1>
+      <div id="subtitle-box">
+        
+        <span id="subtitle"></span>
+        
+      </div>
+      <div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="cover-learn-more">
+    <a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a>
+  </div>
 </section>
 
+
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
+
+
+<!-- Subtitle -->
+
+  <script>
+    try {
+      var typed = new Typed("#subtitle", {
+        strings: ['万物之始，大道至简，衍化至繁', '大道至简，悟在天成', '道法自然'],
+        startDelay: 0,
+        typeSpeed: 200,
+        loop: true,
+        backSpeed: 80,
+        showCursor: true
+      });
+    } catch (err) {
+      console.log(err)
+    }
+  </script>
+  
+<div id="main">
+  <section class="outer">
+  
+  
+  
+
+<div class="notice" style="margin-top:50px">
+    <i class="ri-heart-fill"></i>
+    <div class="notice-content" id="broad"></div>
+</div>
+<script type="text/javascript">
+    fetch('https://v1.hitokoto.cn')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("broad").innerHTML = data.hitokoto;
+        })
+        .catch(console.error)
+</script>
+
+<style>
+    .notice {
+        padding: 20px;
+        border: 1px dashed #e6e6e6;
+        color: #969696;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        background: #fbfbfb50;
+        border-radius: 10px;
+    }
+
+    .notice i {
+        float: left;
+        color: #999;
+        font-size: 16px;
+        padding-right: 10px;
+        vertical-align: middle;
+        margin-top: -2px;
+    }
+
+    .notice-content {
+        display: initial;
+        vertical-align: middle;
+    }
+</style>
+  
+  <article class="articles">
+    
+    
+    
+    
+    <article
+  id="post-esxi 7.0 硬盘设置"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/10/08/esxi%207.0%20%E7%A1%AC%E7%9B%98%E8%AE%BE%E7%BD%AE/"
+    >关于ESXI7.0版本，小容量硬盘占用问题</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/10/08/esxi%207.0%20%E7%A1%AC%E7%9B%98%E8%AE%BE%E7%BD%AE/" class="article-date">
+  <time datetime="2021-10-08T07:05:41.000Z" itemprop="datePublished">2021-10-08</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a> / <a class="article-category-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E8%99%9A%E6%8B%9F%E6%9C%BA/">虚拟机</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>在esxi 7.0里ESX-OSData分区默认会占用120G的硬盘容量，所以小容量硬盘安装会出现安装完系统后没有Datastore空间可用。</p>
+<h6 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h6><p>通过autoPartitionOSDataSize这个启动参数用来调整esxi的系统分区大小。<br><em><strong>在第一次引导启动界面</strong></em>，按下Shift+O，加上autoPartitionOSDataSize=8192，然后回车。8192这个值是代表系统分区大小设置为8G，也可以根据实际需求来设置。 
+      <a class="article-more-link" href="/2021/10/08/esxi%207.0%20%E7%A1%AC%E7%9B%98%E8%AE%BE%E7%BD%AE/"
+        >阅读更多...</a
+      >
+       
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/esxi/" rel="tag">esxi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">解决方案</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+  </article>
+  
+
+  
+</section>
+</div>
 
       <footer class="footer">
   <div class="outer">

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>禅</title>
+  
+  
+  <link href="https://blog.jieyun.site/atom.xml" rel="self"/>
+  
+  <link href="https://blog.jieyun.site/"/>
+  <updated>2021-10-09T04:48:27.476Z</updated>
+  <id>https://blog.jieyun.site/</id>
+  
+  <author>
+    <name>Scott</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于ESXI7.0版本，小容量硬盘占用问题</title>
+    <link href="https://blog.jieyun.site/2021/10/08/esxi%207.0%20%E7%A1%AC%E7%9B%98%E8%AE%BE%E7%BD%AE/"/>
+    <id>https://blog.jieyun.site/2021/10/08/esxi%207.0%20%E7%A1%AC%E7%9B%98%E8%AE%BE%E7%BD%AE/</id>
+    <published>2021-10-08T07:05:41.000Z</published>
+    <updated>2021-10-09T04:48:27.476Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在esxi 7.0里ESX-OSData分区默认会占用120G的硬盘容量，所以小容量硬盘安装会出现安装完系统后没有Datastore空间可用。&lt;/p&gt;
+&lt;h6 id=&quot;解决办法&quot;&gt;&lt;a href=&quot;#解决办法&quot; class=&quot;headerlink&quot; title=&quot;解决办法&quot;&gt;&lt;/a&gt;解决办法&lt;/h6&gt;&lt;p&gt;通过autoPartitionOSDataSize这个启动参数用来调整esxi的系统分区大小。&lt;br&gt;&lt;em&gt;&lt;strong&gt;在第一次引导启动界面&lt;/strong&gt;&lt;/em&gt;，按下Shift+O，加上autoPartitionOSDataSize=8192，然后回车。8192这个值是代表系统分区大小设置为8G，也可以根据实际需求来设置。</summary>
+    
+    
+    
+    <category term="服务器" scheme="https://blog.jieyun.site/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="虚拟机" scheme="https://blog.jieyun.site/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+    
+    <category term="esxi" scheme="https://blog.jieyun.site/tags/esxi/"/>
+    
+    <category term="解决方案" scheme="https://blog.jieyun.site/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    
+  </entry>
+  
+</feed>
